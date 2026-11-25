@@ -1,0 +1,79 @@
+{
+  "format": "nexushen-local-module-provenance",
+  "version": 1,
+  "retrievedAt": "2026-11-25",
+  "upstreamRepository": "https://github.com/GamerHack/GamerHack.github.io",
+  "upstreamCommit": "52edf4c347a407c58880304b9c17d0c4cc6aace0",
+  "archiveSha256": "df752550448989f794bd2311bbbb826ba7d24637c114337c850f47cb4ad20d64",
+  "upstreamPayloadLabel": "GoldHEN v2.4b18.14",
+  "enabledFirmware": [
+    "14.02"
+  ],
+  "upstreamFiles": [
+    {
+      "path": "g2all/goldhen_2.4b18.14.bin",
+      "size": 298776,
+      "sha256": "c5480587d99efc2e3cc132352d9b7cf052dd3068280f1686e7fbb37d57e9ba8b",
+      "modified": false
+    },
+    {
+      "path": "g2all/slopkit/jb.js",
+      "size": 31557,
+      "sha256": "6a25023ddf4332174e91af44b520b06099b60c08a1c47aaaf78c9a39d9110f4d",
+      "modified": false
+    },
+    {
+      "path": "g2all/slopkit/core.js",
+      "size": 43266,
+      "sha256": "3acf7e09988f10f800ca22bac1d4965b89ebb5ce2da4850089918fd1a457df4e",
+      "modified": false
+    },
+    {
+      "path": "g2all/slopkit/mem.js",
+      "size": 28197,
+      "sha256": "73a46ab859d0fd82798a36ef59344cbb3478b8eb9794f7a5f71a42c57ca9817f",
+      "modified": false
+    },
+    {
+      "path": "g2all/slopkit/int64.js",
+      "size": 2787,
+      "sha256": "a79a3334a3f2c75b9a238ab1093796e326251c97ac5d02663eae5b14bf80f652",
+      "modified": false
+    },
+    {
+      "path": "g2all/slopkit/ps4_offsets.js",
+      "size": 17278,
+      "sha256": "c8777be0a148d414e0f16224c2de4e6f3ad33db8dbc6fbcdab2dc701654b31bf",
+      "modified": false
+    },
+    {
+      "path": "g2all/slopkit/afterglow.js",
+      "size": 100545,
+      "sha256": "d366e69ece700ed5a72a5bcae7f21a9904100ec8aab8227009c8eb4a0b2bb283",
+      "modified": false
+    },
+    {
+      "path": "g2all/slopkit/rpc_worker.js",
+      "size": 5395,
+      "sha256": "483925eafec03037596a71b95f046ba0ed1ab9018300ffd5ff718e2ce8c181dd",
+      "modified": false
+    },
+    {
+      "path": "g2all/slopkit/patches/1402.bin",
+      "size": 641,
+      "sha256": "df2145f21ecb8322fd2b062f7f0b8cacca75c96205bc34d96f2d7198bfce9cd3",
+      "modified": false
+    }
+  ],
+  "validation": "Static dependency and byte-integrity review only; no PS4 exploit or payload was executed here.",
+  "integrationChanges": [
+    "Manual same-origin landing and run pages, without an iframe.",
+    "Upstream JavaScript and payload bytes preserved.",
+    "Upstream automatic landing and AppCache pages excluded from the public site; an Internet connection is required during loading.",
+    "One-use entry intent and strict 14.02 browser gate before importing the original module.",
+    "No automatic external-host fallback.",
+    "NEXUSHEN wrapper wording adapted for public HTTPS hosting."
+  ],
+  "integrationVersion": "Royal Tester 0.4.1",
+  "publishedModulePath": "modules/goldhen/g2all/index.html"
+}

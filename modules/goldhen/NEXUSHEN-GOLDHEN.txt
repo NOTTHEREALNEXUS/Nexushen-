@@ -1,0 +1,2 @@
+NEXUSHEN_LOCAL_GOLDHEN_V1
+NEXUSHEN 0.3.2 - GoldHEN local, page de depart manuelle.

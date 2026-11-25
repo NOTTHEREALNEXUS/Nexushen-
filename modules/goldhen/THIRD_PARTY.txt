@@ -1,0 +1,32 @@
+NEXUSHEN Royal Tester 0.4.1 — Module GoldHEN intégré — 25 novembre 2026
+
+Source des fichiers du chargeur :
+https://github.com/GamerHack/GamerHack.github.io
+Commit : 52edf4c347a407c58880304b9c17d0c4cc6aace0
+Sous-dossier g2all, fichiers recensés dans provenance.json.
+
+La page source annonce GoldHEN v2.4b18.14 et le firmware 14.02.
+Cette annonce ne constitue pas un test matériel indépendant.
+Les fichiers JavaScript tiers et le payload sont copiés sans modification.
+NEXUSHEN fournit les pages de départ, de vérification et de retour sur le même site.
+Le lancement manuel de cette intégration est limité au firmware 14.02.
+
+Crédits de l'hôte source : GamerHack, SiSTRo, Abc, _AlAzif, ChendoChap,
+Kameleonre_. Les crédits présents dans les scripts restent dans ces scripts.
+GoldHEN est un projet distinct ; le binaire n'est pas un payload NEXUSHEN.
+
+slopkit/afterglow.js porte le copyright (C) 2026 well0nez et une licence
+GNU GPL version 3 ou ultérieure. Le texte GPL-3.0.txt est joint, avec son
+code source JavaScript d'origine. Aucune modification de ce script.
+Les autres fichiers conservent leurs éventuelles notices propres. Aucune
+licence générale nouvelle n'est attribuée à l'ensemble de ces composants.
+
+L'index automatique, la page AppCache et le manifeste de cache de l'hôte
+source ne sont pas publiés dans cette édition. Le code source des scripts
+tiers actifs est conservé dans g2all/slopkit avec ses notices. Le module
+n'installe pas de cache hors ligne : une connexion au site est nécessaire
+pendant la vérification et le chargement.
+
+Les contrôles de taille et SHA-256 vérifient la fidélité aux références du
+pack. Ils ne certifient ni l'auteur du binaire, ni sa stabilité, ni l'absence
+de défauts. La réussite sur PS4 n'a pas été vérifiée dans cet environnement.

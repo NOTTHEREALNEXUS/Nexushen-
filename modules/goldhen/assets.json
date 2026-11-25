@@ -1,0 +1,61 @@
+{
+  "format": "nexushen-local-goldhen-assets",
+  "firmware": "14.02",
+  "files": [
+    {
+      "path": "g2all/goldhen_2.4b18.14.bin",
+      "size": 298776,
+      "sha256": "c5480587d99efc2e3cc132352d9b7cf052dd3068280f1686e7fbb37d57e9ba8b"
+    },
+    {
+      "path": "g2all/slopkit/jb.js",
+      "size": 31557,
+      "sha256": "6a25023ddf4332174e91af44b520b06099b60c08a1c47aaaf78c9a39d9110f4d"
+    },
+    {
+      "path": "g2all/slopkit/core.js",
+      "size": 43266,
+      "sha256": "3acf7e09988f10f800ca22bac1d4965b89ebb5ce2da4850089918fd1a457df4e"
+    },
+    {
+      "path": "g2all/slopkit/mem.js",
+      "size": 28197,
+      "sha256": "73a46ab859d0fd82798a36ef59344cbb3478b8eb9794f7a5f71a42c57ca9817f"
+    },
+    {
+      "path": "g2all/slopkit/int64.js",
+      "size": 2787,
+      "sha256": "a79a3334a3f2c75b9a238ab1093796e326251c97ac5d02663eae5b14bf80f652"
+    },
+    {
+      "path": "g2all/slopkit/ps4_offsets.js",
+      "size": 17278,
+      "sha256": "c8777be0a148d414e0f16224c2de4e6f3ad33db8dbc6fbcdab2dc701654b31bf"
+    },
+    {
+      "path": "g2all/slopkit/afterglow.js",
+      "size": 100545,
+      "sha256": "d366e69ece700ed5a72a5bcae7f21a9904100ec8aab8227009c8eb4a0b2bb283"
+    },
+    {
+      "path": "g2all/slopkit/rpc_worker.js",
+      "size": 5395,
+      "sha256": "483925eafec03037596a71b95f046ba0ed1ab9018300ffd5ff718e2ce8c181dd"
+    },
+    {
+      "path": "g2all/slopkit/patches/1402.bin",
+      "size": 641,
+      "sha256": "df2145f21ecb8322fd2b062f7f0b8cacca75c96205bc34d96f2d7198bfce9cd3"
+    },
+    {
+      "path": "g2all/run.html",
+      "size": 1252,
+      "sha256": "be3bba2e66aa4c53d6be39f3260c4fe91dfa0a90f36362ce6273f98f4218fc56"
+    },
+    {
+      "path": "g2all/runner.js",
+      "size": 1259,
+      "sha256": "4aff465d570e8ae440902a503b087d95cb65077cf07db6730bad298008df0475"
+    }
+  ]
+}
