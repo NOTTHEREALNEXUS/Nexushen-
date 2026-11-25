@@ -5,7 +5,15 @@
   var start = doc.getElementById('launch'), verify = doc.getElementById('verify');
   var status = doc.getElementById('file-status'), fw = doc.getElementById('firmware');
   var ready = false, busy = false, current = null, stopped = false;
-  var generation = 0, nextTimer = null;
+  var generation = 0, nextTimer = null, verifiedCount = 0;
+  var journal = win.NexusJournal;
+  function journalStart(source) {
+    try { return journal && journal.start({module: 'goldhen', version: '0.4.3', firmware: actual,
+      userAgent: win.navigator.userAgent, source: source}); } catch (ignore) { return ''; }
+  }
+  function journalCall(method, args) {
+    try { if (journal && typeof journal[method] === 'function') { return journal[method].apply(journal, args); } } catch (ignore) {}
+  }
   var actual = G && typeof G.firmware === 'function' ? G.firmware(win.navigator.userAgent) : '';
   fw.textContent = actual ? 'PS4 · firmware détecté : ' + actual : 'Consultation sur PC ou téléphone';
   doc.getElementById('device-note').textContent = actual === '14.02' ?
@@ -31,6 +39,12 @@
   }
   function finish(err, count) {
     busy = false; verify.disabled = false; ready = !err;
+    verifiedCount = err ? 0 : count;
+    if (err) {
+      var failedCheck = journalStart('verification');
+      journalCall('record', [failedCheck, 'verification_error', 'Vérification des fichiers interrompue', err.message]);
+      journalCall('finish', [failedCheck, 'browser_error']);
+    }
     start.disabled = !ready || actual !== '14.02';
     setStatus(err ? err.message + ' — Reviens à la page GoldHEN et relance la vérification. Si cela persiste, signale le fichier indiqué.' :
       count + ' fichiers vérifiés : tailles et SHA-256 conformes aux références publiées. Aucun lancement effectué.', !!err);
@@ -75,12 +89,19 @@
   verify.addEventListener('click', checkFiles, false);
   start.addEventListener('click', function () {
     if (!ready || busy || actual !== '14.02' || start.disabled) { return; }
+    var attempt = '';
     try {
-      win.sessionStorage.setItem(G.armKey, JSON.stringify({version: 1, firmware: actual, createdAt: new Date().getTime()}));
+      attempt = journalStart('manual-launch');
+      win.sessionStorage.setItem(G.armKey, JSON.stringify({version: 1, firmware: actual,
+        createdAt: new Date().getTime(), attemptId: attempt || ''}));
+      journalCall('record', [attempt, 'verification_passed', verifiedCount + ' fichiers vérifiés', 'Tailles et SHA-256 conformes aux références du module.']);
+      journalCall('record', [attempt, 'launch_requested', 'Lancement demandé par le bouton GoldHEN', 'La réussite sur console reste à confirmer.']);
       if (win.NexusController) { win.NexusController.stop(); }
       start.disabled = true; win.location.assign('run.html' + G.query);
     } catch (e) {
       try { win.sessionStorage.removeItem(G.armKey); } catch (ignore) {}
+      journalCall('record', [attempt, 'navigation_error', 'La page de lancement n’a pas pu être ouverte', e.message]);
+      journalCall('finish', [attempt, 'navigation_failed']);
       if (win.NexusController) { win.NexusController.refresh(); }
       ready = false; start.disabled = true;
       setStatus('Le navigateur ne permet pas de préparer le lancement : ' + e.message, true);

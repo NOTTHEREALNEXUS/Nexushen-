@@ -1,0 +1,17 @@
+{
+  "format": "nexushen-development-manifest",
+  "schemaVersion": 1,
+  "name": "NEXUSHEN",
+  "version": "0.1-dev",
+  "declaredFirmwareTarget": "14.02",
+  "nativePayload": {"status": "not-built", "entryPoint": null, "compatibilityValidated": false},
+  "components": [
+    {"id": "workspace", "name": "Dossier de préparation", "status": "implemented", "scope": "Identité, notes, inventaire SHA-256, sauvegarde et restauration JSON locales"},
+    {"id": "diagnostics", "name": "Journal navigateur", "status": "integrated", "entryPoint": "../../diagnostics/index.html"},
+    {"id": "native-baseline", "name": "Base native et provenance", "status": "to-review", "scope": "Vérifier les sources candidates, leur provenance et leur licence"},
+    {"id": "native-build", "name": "Compilation native", "status": "not-started", "scope": "Définir et vérifier une chaîne de compilation reproductible"},
+    {"id": "hardware-tests", "name": "Validation sur console", "status": "not-started", "scope": "Confirmer le comportement de la future version NEXUSHEN sur matériel"}
+  ],
+  "data": {"storage": "browser-local", "projectFormat": "nexushen-development-project", "sourceContentStored": false, "sourceFilesExecuted": false, "automaticUpload": false},
+  "limits": {"files": 32, "fileBytes": 33554432, "importBytes": 262144}
+}

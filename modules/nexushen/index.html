@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="same-origin">
+  <title>NEXUSHEN — Développement 0.1</title>
+  <link rel="stylesheet" href="../goldhen/module.css"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header><a class="brand" href="../../index.html">NEXUS<span>HEN</span></a><span class="tag">0.1-DEV · PRÉPARATION</span></header>
+  <section class="hero" aria-labelledby="title">
+    <p class="eyebrow">NOTRE VERSION · EN DÉVELOPPEMENT</p>
+    <h1 id="title">NEXUSHEN<span class="gold-dot">.</span></h1>
+    <p class="subtitle">La base de travail pour préparer notre propre version.</p>
+    <div class="badges"><span>Firmware cible déclaré : 14.02</span><span>Payload natif : pas encore construit</span></div>
+    <p>Rassemble les fichiers sources, leurs empreintes et les notes de développement. Ce dossier constitue le point de départ du projet ; il ne lance aucun HEN.</p>
+    <div class="actions"><a class="button" href="../../diagnostics/index.html">Logs et retours de test</a><a class="button" href="../goldhen/g2all/index.html">Ouvrir GoldHEN</a><a class="button" href="../../index.html">Retour à NEXUSHEN</a></div>
+  </section>
+
+  <section class="project-section" aria-labelledby="progress-title">
+    <p class="eyebrow">ÉTAT DU PROJET</p><h2 id="progress-title">Une base claire pour avancer</h2>
+    <ol class="milestones">
+      <li><span class="phase done">DISPONIBLE</span><h3>Dossier de préparation</h3><p>Inventaire local, empreintes SHA-256, notes et sauvegarde du projet.</p></li>
+      <li><span class="phase planned">À VÉRIFIER</span><h3>Base native</h3><p>Examiner les sources candidates, leur origine, leur licence et la cible de firmware.</p></li>
+      <li><span class="phase planned">À DÉVELOPPER</span><h3>Compilation et validation</h3><p>Construire une version identifiable, puis vérifier son comportement sur console.</p></li>
+    </ol>
+    <p class="muted">Les retours positifs du module GoldHEN ne valident pas un futur payload NEXUSHEN.</p>
+  </section>
+
+  <section class="project-section" aria-labelledby="files-title">
+    <p class="eyebrow">FICHIERS DU PROJET</p><h2 id="files-title">Préparer les sources</h2>
+    <p>Choisis les fichiers à référencer : archives, sources ou documents. Seuls leur nom, leur taille et leur empreinte seront conservés dans ce dossier. Garde les fichiers originaux de ton côté.</p>
+    <p class="muted">32 fichiers maximum · 32 Mio par fichier · aucune exécution ni transmission.</p>
+    <label class="file-label" for="source-files">Ajouter des fichiers à l’inventaire</label><input id="source-files" type="file" multiple>
+    <p id="file-status" class="status" role="status" aria-live="polite">Aucun fichier sélectionné.</p>
+    <ul id="source-list" class="source-list" aria-label="Inventaire des fichiers"></ul>
+    <noscript><p class="status error">Active JavaScript pour enregistrer le dossier de préparation.</p></noscript>
+  </section>
+
+  <section class="project-section" aria-labelledby="notes-title">
+    <p class="eyebrow">DOSSIER DE PRÉPARATION</p><h2 id="notes-title">Conserver le contexte</h2>
+    <label for="source-origin">Origine ou provenance des fichiers</label>
+    <input id="source-origin" type="text" maxlength="1000" placeholder="Ex. dépôt d’origine, version ou archive reçue">
+    <label for="project-notes">Notes de développement</label>
+    <textarea id="project-notes" rows="6" maxlength="6000" placeholder="Ce qui est confirmé, les points à vérifier et le prochain objectif…"></textarea>
+    <div class="actions"><button id="save-project" type="button" class="primary">Enregistrer le dossier</button><button id="export-project" type="button">Exporter le projet JSON</button></div>
+    <p id="save-status" class="muted" role="status" aria-live="polite">Chargement du dossier local…</p>
+    <details><summary tabindex="0">Restaurer un dossier de préparation</summary><p>Cette importation concerne uniquement le projet de développement. Tes réglages et sauvegardes Guardian sont gérés depuis le menu principal.</p><label for="project-import">Choisir un export NEXUSHEN Projet (.json)</label><input id="project-import" type="file" accept=".json,application/json"><p id="import-status" class="muted" role="status"></p></details>
+    <div id="project-export-copy" hidden><label for="export-text">Copie de la sauvegarde JSON</label><textarea id="export-text" rows="10" readonly></textarea><p class="muted">Si le téléchargement n’est pas proposé par ton navigateur, copie ce texte dans un fichier .json.</p></div>
+  </section>
+  <footer><p>Dossier conservé dans ce navigateur, sur cette adresse. Exporte-le pour le déplacer vers un autre appareil. L’empreinte identifie le contenu ; elle ne prouve ni l’origine ni la compatibilité d’un fichier.</p><p id="controller-status"></p><a href="manifest.json">Manifeste de développement</a> · <a href="README.txt">Périmètre de cette première version</a></footer>
+</main>
+<script src="../goldhen/integrity.js"></script><script src="project.js"></script><script src="app.js"></script><script src="../goldhen/controller.js"></script>
+</body>
+</html>

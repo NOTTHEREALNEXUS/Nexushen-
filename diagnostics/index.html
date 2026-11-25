@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="same-origin">
+  <title>NEXUSHEN — Logs des tentatives</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header><a class="brand" href="../index.html">NEXUS<span>HEN</span></a><span class="tag">JOURNAL · 0.4.3</span></header>
+  <section class="intro" aria-labelledby="title">
+    <p class="eyebrow">DIAGNOSTIC DU NAVIGATEUR</p>
+    <h1 id="title">Logs des tentatives<span>.</span></h1>
+    <p class="subtitle">Retrouve la dernière étape enregistrée avant une interruption.</p>
+    <p class="notice">Le site conserve les étapes visibles et les erreurs JavaScript. Un arrêt brutal peut empêcher la dernière sauvegarde. Ce journal ne contient pas de trace noyau et ne peut pas garantir la cause d’un kernel panic.</p>
+    <div class="actions"><a class="button" href="../modules/goldhen/g2all/index.html">Page GoldHEN</a><a class="button" href="../index.html">Retour à NEXUSHEN</a><button id="refresh" type="button">Actualiser le journal</button></div>
+  </section>
+  <p id="storage-status" class="storage" role="status" aria-live="polite"></p>
+  <div class="layout">
+    <section class="panel attempts-panel" aria-labelledby="attempts-title"><h2 id="attempts-title">Mes tentatives</h2><p class="hint">Les 12 plus récentes, dans ce navigateur et à cette adresse.</p><div id="attempt-list"></div><p id="empty" class="empty">Aucune tentative enregistrée. Les prochains lancements depuis le bouton GoldHEN apparaîtront ici. Les essais précédents ne peuvent pas être récupérés automatiquement.</p></section>
+    <section id="detail-panel" class="panel" aria-labelledby="attempt-title" hidden>
+      <p class="eyebrow">TENTATIVE SÉLECTIONNÉE</p><h2 id="attempt-title"></h2>
+      <p id="attempt-meta" class="hint"></p>
+      <p id="attempt-status" class="status"></p>
+      <div class="last-step"><h3>Dernière observation enregistrée</h3><p id="last-observation"></p></div>
+      <p id="dropped" class="hint"></p>
+      <div id="event-list" class="events"></div>
+      <form id="report-form">
+        <h3>Compléter avec ton observation</h3><p class="hint">Ce résultat est ta déclaration, conservée séparément des événements du navigateur.</p>
+        <label for="outcome">Qu’as-tu constaté sur la PS4 ?</label>
+        <select id="outcome"><option value="unknown">Non déterminé</option><option value="goldhen_confirmed">GoldHEN confirmé sur console</option><option value="power_off_reported">Extinction signalée</option><option value="freeze_reported">Blocage signalé</option><option value="error_reported">Erreur affichée</option></select>
+        <label for="note">Précisions utiles (facultatif)</label><textarea id="note" rows="3" maxlength="1200" placeholder="Dernier écran, message exact, modèle de PS4…"></textarea>
+        <button class="button" type="submit">Enregistrer mon observation</button><p id="report-status" class="hint" role="status" aria-live="polite"></p>
+      </form>
+      <section class="export" aria-labelledby="export-title"><h3 id="export-title">Partager le rapport</h3><p class="hint">Les rapports restent ici. Aucun envoi automatique. Tu peux exporter cette tentative ou copier son JSON pour le partager toi-même.</p><div class="actions"><button id="export" class="primary" type="button">Exporter le JSON</button><button id="copy" type="button">Copier le rapport</button></div><label for="report-json">Rapport de la tentative sélectionnée</label><textarea id="report-json" rows="10" readonly spellcheck="false"></textarea><p id="export-status" class="hint" role="status" aria-live="polite"></p></section>
+    </section>
+  </div>
+  <noscript><p class="notice">Active JavaScript pour consulter le journal conservé dans ce navigateur.</p></noscript>
+  <footer><p>Une « fin non confirmée » peut correspondre à un arrêt, une fermeture ou une interruption. Elle ne constitue pas à elle seule un diagnostic de kernel panic.</p><p id="controller-status"></p></footer>
+</main>
+<script src="journal.js"></script><script src="viewer.js"></script><script src="../modules/goldhen/controller.js"></script>
+</body>
+</html>
