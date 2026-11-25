@@ -6,7 +6,7 @@
   else { root.NexusGoldhenGate = api; }
 }(typeof window !== 'undefined' ? window : this, function () {
   'use strict';
-  var QUERY = '?afterglow=run&mode=goldhen&payload=goldhen_2.4b18.14.bin&log=1';
+  var QUERY = '?afterglow=run&mode=goldhen&payload=goldhen_2.4b18.14.bin&log=1&nexus=0.4.3';
   var ARM_KEY = 'nexushen.goldhen.local.intent.v1';
   function firmware(ua) {
     var m = String(ua || '').match(/PlayStation 4[ /]([\d.]+)/i);

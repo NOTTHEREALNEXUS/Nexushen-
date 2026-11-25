@@ -57,7 +57,7 @@
     if (!/^https?:$/.test(win.location.protocol)) { finish(new Error('Ouvre le module depuis le site NEXUSHEN en HTTP ou HTTPS')); return; }
     if (!C || !G || !win.XMLHttpRequest || !win.Uint8Array) { finish(new Error('La vérification des fichiers est indisponible dans ce navigateur')); return; }
     busy = true; verify.disabled = true; setStatus('Vérification des fichiers du module…', false);
-    request('../assets.json', false, function (err, raw) {
+    request('../assets.json?v=0.4.3-2', false, function (err, raw) {
       if (stopped || job !== generation) { return; }
       if (err) { finish(err); return; }
       var manifest, i = 0;
@@ -74,7 +74,7 @@
         if (i === manifest.files.length) { finish(null, i); return; }
         var item = manifest.files[i];
         setStatus('Vérification ' + (i + 1) + '/' + manifest.files.length + ' · ' + item.path.replace('g2all/', ''), false);
-        request('../' + item.path, true, function (error, buffer) {
+        request('../' + item.path + '?v=0.4.3-2', true, function (error, buffer) {
           if (stopped || job !== generation) { return; }
           if (error) { finish(error); return; }
           try {
